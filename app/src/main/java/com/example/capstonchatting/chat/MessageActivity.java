@@ -34,7 +34,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -43,13 +42,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 public class MessageActivity extends AppCompatActivity {
 
@@ -115,39 +107,7 @@ public class MessageActivity extends AppCompatActivity {
 
 
     }
-    void sendGcm(){
 
-        Gson gson = new Gson();
-
-        NotificationModel notificationModel = new NotificationModel();
-        notificationModel.to = destinationUserModel.pushToken;
-        notificationModel.notification.title = "보낸이 아이디";
-        notificationModel.notification.text = editText.getText().toString();
-
-
-        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf8"),gson.toJson(notificationModel));
-
-        Request request = new Request.Builder()
-                .header("Content-Type","application/json")
-                .addHeader("Authorization","key=AIzaSyDNFs9vhpZQzQ3VeMXojsAJIId2Z7aj_Xk")
-                .url("https://gcm-http.googleapis.com/gcm/send")
-                .post(requestBody)
-                .build();
-        OkHttpClient okHttpClient = new OkHttpClient();
-        okHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-
-            }
-        });
-
-
-    }
     void  checkChatRoom(){
 
         FirebaseDatabase.getInstance().getReference().child("chatrooms").orderByChild("users/"+uid).equalTo(true).addListenerForSingleValueEvent(new ValueEventListener() {
