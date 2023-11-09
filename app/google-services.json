@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "346960898208",
+    "project_id": "capstonchatting",
+    "storage_bucket": "capstonchatting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346960898208:android:6a9f4d21c3048d94a101c5",
+        "android_client_info": {
+          "package_name": "com.example.capstonchatting"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcVS4jW84tLwm0gXuW-9fQQ75T-Ae2EAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
