@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    android:weightSum="1"
+    >
+
+    <!-- 상단 설정 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_setting"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="setting"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+    <!-- 사용자 정보 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- 프로필 이미지 -->
+        <ImageView
+            android:id="@+id/accountFragment_imageView_profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/icon"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:elevation="2dp"
+            android:translationZ="2dp"
+            android:layout_marginEnd="16dp"/>
+
+        <!-- 사용자 이름과 이메일 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- 사용자 이름 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/accountFragment_textView_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용자 이름"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <!-- 변경 텍스트뷰 -->
+                <TextView
+                    android:id="@+id/accountFragment_textView_changeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="변경"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:onClick="onChangeNameClick"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"/>
+            </RelativeLayout>
+
+            <!-- 사용자 이메일 -->
+            <TextView
+                android:id="@+id/accountFragment_textView_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="user@example.com"
+                android:textSize="16sp"
+                android:paddingTop="4dp"
+                android:textColor="@android:color/darker_gray"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 상태 메시지 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        android:gravity="center">
+
+        <!-- "상태 메시지:" 표시 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="상태 메시지: "
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            android:gravity="center_vertical"
+            />
+
+        <!-- 현재 상태 메시지 표시 -->
+        <TextView
+            android:id="@+id/accountFragment_textView_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="현재 상태 메시지"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_vertical|start"
+            android:layout_marginStart="8dp"/>
+
+        <!-- 상태 메시지 변경 버튼 -->
+        <TextView
+            android:id="@+id/accountFragment_button_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="변경"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:onClick="onStatusButtonClick"/>
+
+    </LinearLayout>
+
+    <!-- 공지사항 바 -->
+    <LinearLayout
+        android:id="@+id/accountFragment_layout_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_notice"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공지사항"
+            android:textSize="25dp"
+            android:layout_marginLeft="5dp"/>
+
+        <!-- 공지사항 열고 닫기 버튼 -->
+        <TextView
+            android:id="@+id/accountFragment_button_toggleNotice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="열기"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:onClick="onToggleNoticeButtonClick"/>
+    </LinearLayout>
+
+    <!-- 공지사항 레이아웃 -->
+    <LinearLayout
+        android:id="@+id/accountFragment_layout_noticeContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingTop="5dp">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/accountFragment_button_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:onClick="onLogoutButtonClick"
+        android:text="로그아웃"
+        android:textColor="@android:color/white"
+        android:textSize="16dp"
+        />
+
+
+</LinearLayout>
+
+

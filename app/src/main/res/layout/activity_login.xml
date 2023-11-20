@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F7F7"
+    android:gravity="center">
+
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:hint="LOGIN" />
+
+
+    <EditText
+        android:id="@+id/loginActivity_edittext_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="아이디"
+        android:inputType="textEmailAddress" />
+
+
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/loginActivity_edittext_password"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="패드워드" />
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <Button
+
+            android:text="로그인"
+            android:id="@+id/loginActivity_button_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="회원가입"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/loginActivity_button_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- activity_login.xml 레이아웃 파일 -->
+    <EditText
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호를 잊어 버리셨나요?"/>
+    <TextView
+        android:id="@+id/loginActivity_password_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="비밀번호 재설정"
+        android:textColor="@color/black"
+        android:clickable="true"
+        android:onClick="passwordResetClicked" />
+
+
+
+</LinearLayout>

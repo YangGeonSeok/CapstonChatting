@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- rounded_button.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="10dp" /> <!-- 조절 가능한 반지름 값 -->
+    <solid android:color="@color/colorPrimary" /> <!-- 버튼의 배경 색상 -->
+</shape>
